@@ -10,15 +10,12 @@ module.exports = {
   module: {
     /* ファイルローダーなどの設定 */
     rules: [
+      /* eslint */
       {
-        /* JavaScript */
-        test: /\.jsx?$/,
+        enforce: 'pre',
+        test: /\.tsx?$/,
         exclude: /node_modules/,
-        use: [
-          {
-            loader: 'babel-loader',
-          },
-        ],
+        loader: 'eslint-loader',
       },
       /* TypeScript */
       {
